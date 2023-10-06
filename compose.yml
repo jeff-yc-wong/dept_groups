@@ -29,9 +29,9 @@ services:
       MYSQL_USER: tarynet
       MYSQL_PASSWORD: tarynpass
     volumes:
-      - ./reload.sql:/docker-entrypoint-initdb.d/reload.sql
-      - ./add_test_data.sql:/docker-entrypoint-initdb.d/add_test_data.sql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./sqlscripts/reload.sql:/docker-entrypoint-initdb.d/reload.sql
+      - ./sqlscripts/add_test_data.sql:/script/add_test_data.sql
+      - ./sqlscripts/init.sql:/script/init.sql
       - mysql-data:/var/lib/mysql
     networks:
       - app-network
